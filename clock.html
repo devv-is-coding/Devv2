@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Clock</title>
+        <link rel="stylesheet" href="clock.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+    <div class="container">
+        <div class="clock">
+            <div class="circle" id="sc" style="--clr:red;"><i></i></div>
+            <div class="circle circle2" id="mn" style="--clr:black;"><i></i></div>
+            <div class="circle circle3" id="hr" style="--clr:black;"><i></i></div>
+
+            <span style="--i:1;"><b>1</b></span>
+            <span style="--i:2;"><b>2</b></span>
+            <span style="--i:3;"><b>3</b></span>
+            <span style="--i:4;"><b>4</b></span>
+            <span style="--i:5;"><b>5</b></span>
+            <span style="--i:6;"><b>6</b></span>
+            <span style="--i:7;"><b>7</b></span>
+            <span style="--i:8;"><b>8</b></span>
+            <span style="--i:9;"><b>9</b></span>
+            <span style="--i:10;"><b>10</b></span>
+            <span style="--i:11;"><b>11</b></span>
+            <span style="--i:12;"><b>12</b></span>
+        </div>
+            <button class="alarmBtn"> ADD ALARM</button>
+        <div class="alarmContainer">
+            <i class="bx bx-x" id = "close-alarmContainer"></i>
+            <h1 id="alarm-title">ALARM</h1>
+            <div class="setAlarm">
+            <label>ALARM IN: </label>
+            <input type="date" class="alarmDate">
+            <input type="time" class="alarmTime">
+            <button id="alarmSet">ALARM SET</button>
+
+            <h3>The Alarms: <span id="alarmDisplay"></span></h3>
+        </div>
+        </div>
+
+        <!-- digital clock-->
+        <div id="time">
+            <div id="hours" style="--clr:#ff2972;">00</div>
+            <div id="minutes" style="--clr:#fee800;">00</div>
+            <div id="seconds" style="--clr:#04fc43;">00</div>
+            <div id="ampm">AM</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="clock.js"></script>
+     </body>
+</html>
+

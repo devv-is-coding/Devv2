@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family-Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #3479c9;
+    background-image: url(https://i.pinimg.com/originals/00/43/04/0043044fd8e3c55c584ddaf0c9c134e2.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1200px;
+}
+.container
+{
+    position: relative;
+    background: #87CEEB;
+    border-radius: 30px;
+    box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
+    10px 10px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(225,225,225,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+.clock
+{
+    position: relative;
+    width:350px;
+    height: 350px;
+    background: #E0FFFF;
+    border-radius: 50%;
+    box-shadow: 8px 40px 60px rgba(0,0,0,0.25),
+    inset 3px 3px 8px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(225,225,225,0.2),
+    inset -3px -3px 10px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.alarmBtn {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+  
+  .alarmBtn:hover,
+  .alarmBtn:focus {
+    background-color: #b3d3ea;
+    color: #2c5777;
+  }
+  
+  .alarmBtn:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+  
+  .alarmBtn:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+  }
+  .alarmContainer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -100%;
+    width: 350px;
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 1.35;
+    bottom: auto;  
+    border-style: dashed;
+    border-radius: 30px;
+    background-color: #a0c7e4;
+    border-color: #2c5777;
+}
+#alarm-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    color: #2c5777;
+}
+.alarmContainer.active{
+    right:0;
+}
+#close-alarmContainer{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.setAlarm{
+    margin-top: 10px;
+}
+.clock::before
+{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border: 3px solid black;
+    border-radius: 50%; 
+    z-index: 100000;
+}
+.clock span
+{
+    position: absolute;
+    inset: 20px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    /* 360 / 12 = 30deg */
+}
+.clock span b
+{
+    border-color: rgb(4, 100, 117);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 40%;
+    padding-top: 10px;
+    background-color: rgb(106, 233, 250);
+    width: 55px;
+    height: 50px;
+    font-size: 2em;
+    opacity: 5;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+    color: black;
+    z-index: 400;
+}
+.circle
+{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(0,0,0,0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+.circle i
+{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.circle:nth-child(1) i
+{
+    width: 2px;
+}
+.circle:nth-child(2) i
+{
+    width: 6px;
+}
+.circle2
+{
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+.circle3
+{
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+/* digital clock style */
+#time
+{
+    position: relative;
+    background: #ADD8E6;
+    margin-right: 40px;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size:  30px;
+    font-weight: 600;
+    border: 2px solid rgba(0,0,0,0.5);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(225,225,225,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    z-index: 200;
+}
+#time div
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-color: rgb(4, 100, 117);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 40%;
+    width: 55px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 900;
+    font-style: normal;
+    padding-top: 10px;
+    background-color: rgb(106, 233, 250);
+    position: relative;
+    opacity: 1;
+    width: 60px;
+    text-align: center;
+    font-weight:500;
+    color: var(--clr);
+    color: black;
+}
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after
+{
+    content: ':';
+    top: 6px;
+    left: 59px;
+    position: absolute;
+    right: -4px;
+    z-index: 2;
+}
+#time div:last-child
+{
+    font-size: 0.70em;
+    display: flex;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+    color:rgb(0, 0, 0);
+    font-style: inherit;
+}
+#time div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+}
